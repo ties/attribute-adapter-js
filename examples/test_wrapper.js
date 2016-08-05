@@ -44,3 +44,6 @@ proxiedObject.two = 3;
 proxiedObject.path.second = 4;
 
 console.log(proxiedObject);
+
+// Fails: setter returns false, i.e. not assignable
+proxiedObject.traversing = 6;
