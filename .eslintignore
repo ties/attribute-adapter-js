@@ -1,0 +1,5 @@
+src/schema/**/*
+dist
+lib
+node_modules
+webpack.*
