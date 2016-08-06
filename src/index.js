@@ -1,4 +1,4 @@
-import { fromJS, Collection, List } from 'immutable';
+import { Collection, List } from 'immutable';
 
 /**
  * Handle a single attribute
@@ -15,7 +15,7 @@ function getAttributeWrapper(target, targetProp) {
         return cur.map(c => c[value]);
       }
 
-      if (typeof cur.get === 'function') {
+      if (cur instanceof Collection.Keyed) {
         return cur.get(value);
       }
       return cur[value];
@@ -66,10 +66,12 @@ function hasValidMapping(mappings, prop) {
 
 
 /**
-* Rename the properties of an object
+ * Rename the properties of an object
+ * @param initailMappings: mappings. Type: Immutable Map with Immutable Lists if nested values are
+ *                         included.
 */
 export default function attributeAdapter(initialMappings) {
-  const mappings = fromJS(initialMappings);
+  const mappings = initialMappings;
 
   return {
     get(target, prop) {
