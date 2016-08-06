@@ -1,7 +1,7 @@
 {
   "name": "attribute-adapter",
   "private": false,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A utility that creates an adapter that renames the properties of (ImmutableJS) objects",
   "main": "lib/index.js",
   "directories": {
